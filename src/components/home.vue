@@ -61,25 +61,47 @@ body {
 }
 
 $cyan: #0fe0f5;
-$dark: #222;
+$dark: #605E5F;
+$lightred: #D25E66;
+$darkred: #BD444D;
+$darkgreen: #7D9A88;
+
 $borderW: 4px;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+$openSans: 'Open Sans', Helvetica, Arial, sans-serif;
+body {
+  background: #333;
+  font-family: $openSans;
+}
+
+.buttons {
+  margin-top: 50px;
+  text-align: center;
+  border-radius:30px;
+}
 
 .blob-btn {
   $numOfBlobs: 4;
   z-index: 1;
   position: relative;
-  padding: 10px 23px;
+  padding: 20px 46px;
   margin-bottom: 30px;
-  text-align: end;
+  text-align: center;
   text-transform: uppercase;
   color: $cyan;
-  font-size: 15px;
-  //font-weight: bold;
+  font-size: 16px;
+  font-weight: bold;
   background-color: transparent;
   outline: none;
   border: none;
   transition: color 0.5s;
   cursor: pointer;
+  border-radius:30px;
 
   &:before {
     content: "";
@@ -90,30 +112,31 @@ $borderW: 4px;
     width: 100%;
     height: 100%;
     border: $borderW solid $cyan;
-    //border: 0px; /*边框去除*/
-    //border-radius: 17px;/*边框圆角*/
+    border-radius:30px;
   }
 
   &:after {
     content: "";
     z-index: -2;
     position: absolute;
-    left: $borderW*1.1;
-    top: $borderW*1.1;
+    left: $borderW*1.5;
+    top: $borderW*1.5;
     width: 100%;
     height: 100%;
-    border: $borderW solid $dark;
-    //border-radius: 17px;/*边框圆角*/
+
     transition: all 0.3s 0.2s;
+    border-radius:30px;
   }
 
   &:hover {
     color: $dark;
+    border-radius:30px;
 
     &:after {
       transition: all 0.3s;
       left: 0;
       top: 0;
+      border-radius:30px;
     }
   }
 
@@ -125,6 +148,8 @@ $borderW: 4px;
     top: 0;
     width: 100%;
     height: 100%;
+    border-radius:30px;
+    background:#ffffff;
   }
 
   // additional container created, because in FF blobs are breaking overflow:hidden of element with svg gooey filter
@@ -169,10 +194,10 @@ $borderW: 4px;
 .title{
     text-align: left;
     margin-top: 75px;
-    border-radius: 30px;
+    //border-radius: 30px;
     font-weight: 900;
     text-align: left;
-    color: #ffffff;
+    color: $lightred;
     text-shadow:rgba(0, 0, 0, 0.308) 5px 6px 10px;
     font-size: 35px;
     padding-top: 10px;
@@ -180,14 +205,14 @@ $borderW: 4px;
     max-width: max-content;
 }
 .btn:hover, .btn:active, .btn.focus{
-    color: #BD444D;
+    color: $darkred;
 }
 .btn-control-main{
     position: fixed;
     z-index: 2;
     background-color: #ff7b7bc2;/*背景颜色*/
     border: 0px; /*边框去除*/
-    border-radius: 17px;/*边框圆角*/
+    //border-radius: 17px;/*边框圆角*/
     max-width: 100%;
     padding: 3px;
     transition-property: all;
@@ -208,7 +233,7 @@ $borderW: 4px;
     position: fixed;
     background-color: #ff7b7bc2;/*背景颜色*/
     border: 0px; /*边框去除*/
-    border-radius: 17px;/*边框圆角*/
+    //border-radius: 17px;/*边框圆角*/
     max-width: 100%;
     padding: 3px;
     animation: mymove 800ms;
@@ -226,9 +251,9 @@ $borderW: 4px;
     background-color:#ff7b7be5
 }
 .btn-ctrldft{/*类别选择按钮*/
-    background: #605E5F ;
+    background: $darkred ;
     border: 0px; /*边框去除*/
-    border-radius: 17px;/*边框圆角*/
+    //border-radius: 17px;/*边框圆角*/
     padding-top: 3px;
     box-shadow: 5px 5px 7px #605E5F;
              //-5px -5px 5px #8DA89C;
@@ -253,7 +278,7 @@ $borderW: 4px;
     background:#ffffff;
     box-shadow: 7px 7px 14px #3a3a3a,
                -7px -7px 14px #626262;
-    border-radius: 30px;
+    //border-radius: 30px;
     text-align: left;
     text-shadow:rgba(0, 0, 0, 0.1) 5px 6px 10px;
     transition-property: all;
@@ -272,7 +297,7 @@ $borderW: 4px;
 }
 .btn-body-status{/*播放状态分类标题*/
     background-color: #585858d8;
-    border-radius: 150px;
+    //border-radius: 150px;
     color: #fff;
     text-align: center;
     box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.2);
@@ -285,8 +310,8 @@ $borderW: 4px;
     font-weight: 600;
 }
 .cate-ctrldft{/*今日随机*/
-    background:#BD444D;
-    border-radius: 30px;
+    background:$dark;
+    //border-radius: 30px;
     text-align: left;
     //text-shadow: rgba(255, 19, 103, 0.10) 5px 6px 10px;
     box-shadow: 3px 3px 3px #605E5F;
