@@ -242,8 +242,8 @@ $borderWider: 6px;
     border: 0px; /*边框去除*/
     border-radius: 17px;/*边框圆角*/
     padding-top: 6px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
     box-shadow: 5px 5px 7px #605E5F;
              //-5px -5px 5px #8DA89C;
     text-align: center;
