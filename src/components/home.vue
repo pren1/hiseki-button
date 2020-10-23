@@ -64,9 +64,11 @@ $cyan: #0fe0f5;
 $dark: #605E5F;
 $deeperdark: #3d3d3d;
 $darkred: #D25E66;
+$realdarkred: BD444D;
 $blue: #00ffbb;
 
 $borderW: 4px;
+$borderWider: 6px;
 
 .blob-btn {
   $numOfBlobs: 4;
@@ -104,11 +106,11 @@ $borderW: 4px;
     content: "";
     z-index: -2;
     position: absolute;
-    left: $borderW*1.5;
-    top: $borderW*2;
+    left: $borderW*0.3;
+    top: $borderW*0.9;
     width: 100%;
     height: 100%;
-    border: $borderW solid $dark;
+    border: $borderWider solid $dark;
     border-radius: 17px;/*边框圆角*/
     //overflow: hidden;
     transition: all 0.3s 0.2s;
@@ -278,14 +280,18 @@ $borderW: 4px;
 }
 .cate-header:hover .blob-btn{
     color: #ffffff;
+    &:before {
+      border: $borderW solid $realdarkred;
+      //color: $darkred
+    }
     &:after {
       border: $borderW solid $darkred;
     }
-    background-image: linear-gradient(to right bottom,#585858d8, $dark);
+    //background-image: linear-gradient(to right bottom,#585858d8, $dark);
 }
 .cate-header:hover{
     color: #ffffff;
-    background-image: linear-gradient(to right bottom,#585858d8, $dark);
+    background-image: linear-gradient(to right bottom, $dark, $dark);
 }
 .btn-body-status{/*播放状态分类标题*/
     background-color: #585858d8;
@@ -336,31 +342,31 @@ $borderW: 4px;
 .cate-body button{
     margin: 5px;
 }
-.btn-new {
-    color: #ffffff;
-    background:#605E5F;
-    box-shadow: 5px 5px 7px #605E5F;
-    //box-shadow:4px 4px 10px #343434,
-    //          -4px -4px 10px #686868;
-    border-radius: 15px;
-    border: 0px;
-    max-width: 100%;
-    font-weight: 600;
-    transition-property: all;
-    transition-duration: 300ms;
-    word-wrap: break-word !important;
-    word-break: break-all !important;
-    white-space: normal !important;
-}
-.btn-new:active,.btn-new:focus{
-    color: #BD444D;
-    //box-shadow: inset 5px 5px 10px #3c3c3c,
-    //        inset -5px -5px 10px #606060;
-    //background:#ff7c7c;
-}
-.btn-new:hover{
-   //box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.397);
-}
+//.btn-new {
+//    color: #ffffff;
+//    background:#605E5F;
+//    box-shadow: 5px 5px 7px #605E5F;
+//    //box-shadow:4px 4px 10px #343434,
+//    //          -4px -4px 10px #686868;
+//    border-radius: 15px;
+//    border: 0px;
+//    max-width: 100%;
+//    font-weight: 600;
+//    transition-property: all;
+//    transition-duration: 300ms;
+//    word-wrap: break-word !important;
+//    word-break: break-all !important;
+//    white-space: normal !important;
+//}
+//.btn-new:active,.btn-new:focus{
+//    color: #BD444D;
+//    //box-shadow: inset 5px 5px 10px #3c3c3c,
+//    //        inset -5px -5px 10px #606060;
+//    //background:#ff7c7c;
+//}
+//.btn-new:hover{
+//   //box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.397);
+//}
 .checkbox {
     display: inline-block;
     vertical-align: middle;
