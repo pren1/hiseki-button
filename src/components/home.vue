@@ -62,46 +62,29 @@ body {
 
 $cyan: #0fe0f5;
 $dark: #605E5F;
-$lightred: #D25E66;
-$darkred: #BD444D;
-$darkgreen: #7D9A88;
+$deeperdark: #3d3d3d;
+$darkred: #D25E66;
+$blue: #73dcff;
 
 $borderW: 4px;
-
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-$openSans: 'Open Sans', Helvetica, Arial, sans-serif;
-body {
-  background: #333;
-  font-family: $openSans;
-}
-
-.buttons {
-  margin-top: 50px;
-  text-align: center;
-  border-radius:30px;
-}
 
 .blob-btn {
   $numOfBlobs: 4;
   z-index: 1;
   position: relative;
-  padding: 20px 46px;
+  padding: 10px 23px;
   margin-bottom: 30px;
   text-align: center;
   text-transform: uppercase;
-  color: $cyan;
-  font-size: 16px;
-  font-weight: bold;
+  color: #ffffff;
+  font-size: 15px;
+  //font-weight: bold;
   background-color: transparent;
   outline: none;
   border: none;
   transition: color 0.5s;
   cursor: pointer;
-  border-radius:30px;
+  border-radius: 17px;/*边框圆角*/
 
   &:before {
     content: "";
@@ -111,8 +94,10 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    border: $borderW solid $cyan;
-    border-radius:30px;
+    border: $borderW solid #ffffff;
+    //border: 0px; /*边框去除*/
+    border-radius: 17px;/*边框圆角*/
+    overflow: hidden;
   }
 
   &:after {
@@ -123,20 +108,21 @@ body {
     top: $borderW*1.5;
     width: 100%;
     height: 100%;
-
+    //border: $borderW solid $dark;
+    border-radius: 17px;/*边框圆角*/
+    //overflow: hidden;
     transition: all 0.3s 0.2s;
-    border-radius:30px;
   }
 
   &:hover {
-    color: $dark;
-    border-radius:30px;
+    color: #ffffff;
+    border-radius: 17px;/*边框圆角*/
 
     &:after {
       transition: all 0.3s;
       left: 0;
       top: 0;
-      border-radius:30px;
+      border-radius: 17px;/*边框圆角*/
     }
   }
 
@@ -148,8 +134,7 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    border-radius:30px;
-    background:#ffffff;
+    border-radius: 17px;/*边框圆角*/
   }
 
   // additional container created, because in FF blobs are breaking overflow:hidden of element with svg gooey filter
@@ -165,13 +150,13 @@ body {
     top: $borderW;
     width: 100% / $numOfBlobs;
     height: 100%;
-    background: $cyan;
+    background: $darkred;
     border-radius: 100%;
     transform: translate3d(0,150%,0) scale(1.7);
     transition: transform 0.45s;
 
     @supports(filter: url('#goo')) {
-      transform: translate3d(0,150%,0) scale(1.4);
+      transform: translate3d(0,150%,0) scale(1.6);
     }
 
     @for $i from 1 through $numOfBlobs {
@@ -185,7 +170,7 @@ body {
       transform: translateZ(0) scale(1.7);
 
       @supports(filter: url('#goo')) {
-        transform: translateZ(0) scale(1.4);
+        transform: translateZ(0) scale(1.7);
       }
     }
   }
@@ -194,10 +179,10 @@ body {
 .title{
     text-align: left;
     margin-top: 75px;
-    //border-radius: 30px;
+    border-radius: 30px;
     font-weight: 900;
     text-align: left;
-    color: $lightred;
+    color: $darkred;
     text-shadow:rgba(0, 0, 0, 0.308) 5px 6px 10px;
     font-size: 35px;
     padding-top: 10px;
@@ -212,7 +197,7 @@ body {
     z-index: 2;
     background-color: #ff7b7bc2;/*背景颜色*/
     border: 0px; /*边框去除*/
-    //border-radius: 17px;/*边框圆角*/
+    border-radius: 17px;/*边框圆角*/
     max-width: 100%;
     padding: 3px;
     transition-property: all;
@@ -233,7 +218,7 @@ body {
     position: fixed;
     background-color: #ff7b7bc2;/*背景颜色*/
     border: 0px; /*边框去除*/
-    //border-radius: 17px;/*边框圆角*/
+    border-radius: 17px;/*边框圆角*/
     max-width: 100%;
     padding: 3px;
     animation: mymove 800ms;
@@ -253,7 +238,7 @@ body {
 .btn-ctrldft{/*类别选择按钮*/
     background: $darkred ;
     border: 0px; /*边框去除*/
-    //border-radius: 17px;/*边框圆角*/
+    border-radius: 17px;/*边框圆角*/
     padding-top: 3px;
     box-shadow: 5px 5px 7px #605E5F;
              //-5px -5px 5px #8DA89C;
@@ -275,16 +260,16 @@ body {
     box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.397);
 }
 .cate-header{/*分类标题*/
-    background:#ffffff;
+    background:$darkred;
     box-shadow: 7px 7px 14px #3a3a3a,
                -7px -7px 14px #626262;
-    //border-radius: 30px;
+    border-radius: 30px;
     text-align: left;
-    text-shadow:rgba(0, 0, 0, 0.1) 5px 6px 10px;
+    text-shadow:rgba(255, 255, 255, 0.2) 3px 3px 10px;
     transition-property: all;
     transition-duration: 500ms;
     font-weight: 600;
-    color: #BD444D;
+    color: $blue;
     padding-top: 18px;
     padding-left: 20px;
     font-size: 20px;
@@ -293,11 +278,11 @@ body {
 }
 .cate-header:hover{
     color: #ffffff;
-    background-image: linear-gradient(to right bottom,#D25E66, #B05360);
+    background-image: linear-gradient(to right bottom,#585858d8, $dark);
 }
 .btn-body-status{/*播放状态分类标题*/
     background-color: #585858d8;
-    //border-radius: 150px;
+    border-radius: 150px;
     color: #fff;
     text-align: center;
     box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.2);
@@ -311,7 +296,7 @@ body {
 }
 .cate-ctrldft{/*今日随机*/
     background:$dark;
-    //border-radius: 30px;
+    border-radius: 30px;
     text-align: left;
     //text-shadow: rgba(255, 19, 103, 0.10) 5px 6px 10px;
     box-shadow: 3px 3px 3px #605E5F;
