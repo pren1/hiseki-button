@@ -40,7 +40,7 @@
                     <div class="text-left" style="color: #7D9A88;">{{$t("info.author")}}</div>
                     <div class="text-left">{{$t("info.notOfficial")}}</div>
                     <div class="text-left">参与人员：一代鬃狮，刺猬，小D</div>
-                    <div class="text-left"><a href="https://github.com/voosc/mio-button" target="_blank">{{$t("info.toGithub")}}</a></div>
+                    <div class="text-left"><a href="https://github.com/pren1/hiseki-button" target="_blank">{{$t("info.toGithub")}}</a></div>
                 </div>
             </div>
         </footer>
