@@ -241,12 +241,13 @@ $borderWider: 6px;
     background: $darkred ;
     border: 0px; /*边框去除*/
     border-radius: 17px;/*边框圆角*/
-    padding-top: 3px;
+    padding-top: 6px;
     box-shadow: 5px 5px 7px #605E5F;
              //-5px -5px 5px #8DA89C;
     text-align: center;
     font-weight: 10;
-    padding-bottom: 3px;
+    font-size: 15px;
+    padding-bottom: 6px;
     margin: 5px;
     transition-property: all;
     transition-duration: 300ms;
