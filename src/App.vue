@@ -203,3 +203,10 @@ class App extends Vue {
 export default App;
 </script>
 
+<style>
+  @import "./common/font.css";
+  body{
+    font-family: yahei;
+  }
+
+</style>

@@ -54,11 +54,11 @@
   margin: 0;
   padding: 0;
 }
-$openSans: 'Open Sans', Helvetica, Arial, sans-serif;
-body {
-  background: #333;
-  font-family: $openSans;
-}
+//$openSans: 'Open Sans', Helvetica, Arial, sans-serif;
+//body {
+//  background: #333;
+//  font-family: $openSans;
+//}
 
 $cyan: #0fe0f5;
 $dark: #605E5F;
@@ -185,7 +185,7 @@ $borderWider: 6px;
     font-weight: 900;
     text-align: left;
     color: $darkred;
-    text-shadow:rgba(0, 0, 0, 0.308) 5px 6px 10px;
+    text-shadow:rgba(0, 0, 0, 0.1) 5px 6px 10px;
     font-size: 35px;
     padding-top: 10px;
     padding-bottom: 30px;
@@ -204,10 +204,10 @@ $borderWider: 6px;
     padding: 3px;
     transition-property: all;
     transition-duration: 400ms;
-    font-weight: 600;
+    font-weight: 10;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-weight: 700;
+    font-weight: 10;
     font-size: 15px;
     text-align: center;
 }
@@ -224,10 +224,10 @@ $borderWider: 6px;
     max-width: 100%;
     padding: 3px;
     animation: mymove 800ms;
-    font-weight: 600;
+    font-weight: 10;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-weight: 700;
+    font-weight: 10;
     font-size: 15px;
     text-align: center;
 }
@@ -245,7 +245,7 @@ $borderWider: 6px;
     box-shadow: 5px 5px 7px #605E5F;
              //-5px -5px 5px #8DA89C;
     text-align: center;
-    font-weight: 600;
+    font-weight: 10;
     padding-bottom: 3px;
     margin: 5px;
     transition-property: all;
@@ -270,7 +270,7 @@ $borderWider: 6px;
     //text-shadow:rgba(255, 255, 255, 0.2) 3px 3px 10px;
     transition-property: all;
     transition-duration: 500ms;
-    font-weight: 600;
+    font-weight: 10;
     color: #ffffff;
     padding-top: 18px;
     padding-left: 20px;
@@ -305,7 +305,7 @@ $borderWider: 6px;
     padding: 0px 20px;
     margin-left: -15px;
     margin-right: 15px;
-    font-weight: 600;
+    font-weight: 10;
 }
 .cate-ctrldft{/*今日随机*/
     background:$dark;
@@ -321,7 +321,7 @@ $borderWider: 6px;
     padding-top: 14px;
     padding-left: 17px;
     padding-right: 17px;
-    font-weight: 600;
+    font-weight: 10;
     padding-bottom: 14px;
     margin-bottom: 18px;
     margin-top: 12px;
