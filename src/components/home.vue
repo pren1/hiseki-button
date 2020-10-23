@@ -26,8 +26,21 @@
                 </div>
             <div v-for="category in voices" v-bind:key="category.categoryName">
                 <div class="cate-header" :id="$t(category.categoryName)">{{ $t("voicecategory." + category.categoryName) }} 
-                    <div class="cate-body">
-                        <button class="btn btn-new" v-for="voiceItem in category.voiceList" v-bind:key="voiceItem.name" @click="play(voiceItem)">{{ $t("voice." + voiceItem.name )}}</button>
+<!--                    <div class="cate-body">-->
+<!--                        <button class="btn btn-new" v-for="voiceItem in category.voiceList" v-bind:key="voiceItem.name" @click="play(voiceItem)">{{ $t("voice." + voiceItem.name )}}</button>-->
+<!--                    </div>-->
+                        <div class="cate-body">
+                        <button class="blob-btn"  v-for="voiceItem in category.voiceList" v-bind:key="voiceItem.name" @click="play(voiceItem)">
+                          {{ $t("voice." + voiceItem.name )}}
+                          <span class="blob-btn__inner">
+                            <span class="blob-btn__blobs">
+                              <span class="blob-btn__blob"></span>
+                              <span class="blob-btn__blob"></span>
+                              <span class="blob-btn__blob"></span>
+                              <span class="blob-btn__blob"></span>
+                            </span>
+                          </span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -36,6 +49,123 @@
 </template>
 
 <style lang="scss" scoped>
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+$openSans: 'Open Sans', Helvetica, Arial, sans-serif;
+body {
+  background: #333;
+  font-family: $openSans;
+}
+
+$cyan: #0fe0f5;
+$dark: #222;
+$borderW: 4px;
+
+.blob-btn {
+  $numOfBlobs: 4;
+  z-index: 1;
+  position: relative;
+  padding: 10px 23px;
+  margin-bottom: 30px;
+  text-align: end;
+  text-transform: uppercase;
+  color: $cyan;
+  font-size: 15px;
+  //font-weight: bold;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transition: color 0.5s;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: $borderW solid $cyan;
+    //border: 0px; /*边框去除*/
+    //border-radius: 17px;/*边框圆角*/
+  }
+
+  &:after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: $borderW*1.1;
+    top: $borderW*1.1;
+    width: 100%;
+    height: 100%;
+    border: $borderW solid $dark;
+    //border-radius: 17px;/*边框圆角*/
+    transition: all 0.3s 0.2s;
+  }
+
+  &:hover {
+    color: $dark;
+
+    &:after {
+      transition: all 0.3s;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  // additional container created, because in FF blobs are breaking overflow:hidden of element with svg gooey filter
+  &__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url('#goo');
+  }
+
+  &__blob {
+    position: absolute;
+    top: $borderW;
+    width: 100% / $numOfBlobs;
+    height: 100%;
+    background: $cyan;
+    border-radius: 100%;
+    transform: translate3d(0,150%,0) scale(1.7);
+    transition: transform 0.45s;
+
+    @supports(filter: url('#goo')) {
+      transform: translate3d(0,150%,0) scale(1.4);
+    }
+
+    @for $i from 1 through $numOfBlobs {
+      &:nth-child(#{$i}) {
+        left: ($i - 1) * (120% / $numOfBlobs);
+        transition-delay: ($i - 1) * 0.08s;
+      }
+    }
+
+    .blob-btn:hover & {
+      transform: translateZ(0) scale(1.7);
+
+      @supports(filter: url('#goo')) {
+        transform: translateZ(0) scale(1.4);
+      }
+    }
+  }
+
+}
 .title{
     text-align: left;
     margin-top: 75px;
