@@ -71,7 +71,7 @@ $borderW: 2px;
 $borderWider: 6px;
 
 .blob-btn {
-  $numOfBlobs: 0;
+  $numOfBlobs: 4;
   z-index: 1;
   position: relative;
   padding: 5px 12px;
@@ -119,7 +119,7 @@ $borderWider: 6px;
   }
 
   &:hover {
-    color: $dark;
+    color: $darkred;
     border-radius: 17px;/*边框圆角*/
 
     &:after {
@@ -284,7 +284,7 @@ $borderWider: 6px;
     margin-bottom: 12px;
 }
 .cate-header:hover .blob-btn{
-    color: #ffffff;
+    //color: #ffffff;
     &:before {
       border: $borderW solid $realdarkred;
       //color: $darkred
