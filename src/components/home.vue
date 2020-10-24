@@ -67,19 +67,19 @@ $darkred: #D25E66;
 $realdarkred: BD444D;
 $blue: #00ffbb;
 
-$borderW: 4px;
+$borderW: 2px;
 $borderWider: 6px;
 
 .blob-btn {
-  $numOfBlobs: 4;
+  $numOfBlobs: 0;
   z-index: 1;
   position: relative;
-  padding: 10px 23px;
+  padding: 5px 12px;
   margin-bottom: 30px;
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 16px;
   //font-weight: bold;
   background-color: transparent;
   outline: none;
@@ -106,18 +106,20 @@ $borderWider: 6px;
     content: "";
     z-index: -2;
     position: absolute;
-    left: $borderW*0.3;
-    top: $borderW*0.9;
+    left: $borderW*1.5;
+    top: $borderW*1.5;
     width: 100%;
     height: 100%;
-    border: $borderWider solid $dark;
+    opacity: 0.7;
+    border: $borderW solid $dark;
     border-radius: 17px;/*边框圆角*/
+
     //overflow: hidden;
     transition: all 0.3s 0.2s;
   }
 
   &:hover {
-    color: #ffffff;
+    color: $dark;
     border-radius: 17px;/*边框圆角*/
 
     &:after {
@@ -152,7 +154,7 @@ $borderWider: 6px;
     top: $borderW;
     width: 100% / $numOfBlobs;
     height: 100%;
-    background: $darkred;
+    background: #ffffff;
     border-radius: 100%;
     transform: translate3d(0,150%,0) scale(1.7);
     transition: transform 0.45s;
@@ -266,8 +268,8 @@ $borderWider: 6px;
 }
 .cate-header{/*分类标题*/
     background:$darkred;
-    box-shadow: 3px 3px 7px #3a3a3a,
-               -3px -3px 7px #626262;
+    box-shadow: 3px 3px 7px #DFB3B5,
+               -3px -3px 7px #DFB3B5;
     border-radius: 30px;
     text-align: left;
     //text-shadow:rgba(255, 255, 255, 0.2) 3px 3px 10px;
@@ -294,7 +296,8 @@ $borderWider: 6px;
 }
 .cate-header:hover{
     color: #ffffff;
-    background-image: linear-gradient(to right bottom, $dark, $dark);
+    box-shadow: 0px 0px 0px #DFB3B5;
+    background-image: linear-gradient(to right bottom, #C28483, #C28483);
 }
 .btn-body-status{/*播放状态分类标题*/
     background-color: #585858d8;
