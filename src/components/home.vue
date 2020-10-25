@@ -19,7 +19,7 @@
               <div>
                         <button class="cate-ctrldft" @click="stopPlay">{{$t("action.stopvoice")}}</button>
               </div>
-                <div class="cate-ctrldft">{{$t("action.choose")}}
+                <div class="cate-ctrldft-2">{{$t("action.choose")}}
                     <div id="cate" ><button style="margin-top:2.5px;margin-bottom:2.5px;" class="btn btn-ctrldft" v-for="category in voices" v-bind:key="category.categoryName">
                       <a style="text-decoration:none;color:#fff;" :href="$t('#' + category.categoryName)">{{$t("voicecategory." + category.categoryName)}}</a>
                     </button></div>
@@ -321,7 +321,7 @@ $borderW: 0.1px;
     //text-shadow: rgba(255, 19, 103, 0.10) 5px 6px 10px;
     box-shadow: 3px 3px 3px #605E5F;
                //-7px -7px 14px #605E5F;
-    color: $gold;
+    color: #ffffff;
     transition-property: all;
     transition-duration: 300ms;
     font-size: 20px;
@@ -338,6 +338,33 @@ $borderW: 0.1px;
     //box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.3);
 }
+
+
+.cate-ctrldft-2{/*今日随机*/
+    background:$dark;
+    border-radius: 30px;
+    text-align: left;
+    //text-shadow: rgba(255, 19, 103, 0.10) 5px 6px 10px;
+    box-shadow: 3px 3px 3px #605E5F;
+               //-7px -7px 14px #605E5F;
+    color: $gold;
+    transition-property: all;
+    transition-duration: 300ms;
+    font-size: 20px;
+    padding-top: 14px;
+    padding-left: 17px;
+    padding-right: 17px;
+    font-weight: 10;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+    margin-top: 12px;
+    max-width: max-content;
+}
+.cate-ctrldft-2:hover{
+    //box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.3);
+}
+
 .cate-body{
     margin-top: 12px;
     margin-bottom: 20px;

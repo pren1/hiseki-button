@@ -15,7 +15,7 @@ const zh_CN = {
         AvatarFrame: "FubuMio 头像框",
         toggleNavbar: "切换导航栏",
         random: "● 随机播放",
-        choose: "类别选择器",
+        choose: "❯ 类别选择器",
         share: "分享到Twitter查看",
         placeholder: "请输入昵称",
         live: "● 信息面板",
